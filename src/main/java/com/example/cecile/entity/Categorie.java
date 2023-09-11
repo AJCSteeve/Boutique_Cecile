@@ -16,7 +16,7 @@ public class Categorie {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "categorie")
+    @OneToMany(mappedBy = "categorie",fetch = FetchType.LAZY)
     private List<Produit> produit;
 
 
@@ -51,5 +51,14 @@ public class Categorie {
 
     public void setProduit(List<Produit> produit) {
         this.produit = produit;
+    }
+
+    @Override
+    public String toString() {
+        return "Categorie{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", produit=" + produit +
+                '}';
     }
 }
