@@ -1,18 +1,24 @@
 package com.example.cecile.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "produits")
 public class Produit {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @Column(name = "name")
     private String name;
 
 
-
+    @Column(name = "price")
     private Float price;
 
-
+    @ManyToOne
+    @JoinColumn(name = "categorie_id")
     private Categorie categorie;
 
 

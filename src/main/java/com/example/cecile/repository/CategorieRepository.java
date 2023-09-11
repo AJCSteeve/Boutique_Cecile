@@ -1,4 +1,8 @@
 package com.example.cecile.repository;
 
-public interface CategorieRepository {
+import com.example.cecile.entity.Categorie;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CategorieRepository extends JpaRepository<Categorie,Long> {
+
 }

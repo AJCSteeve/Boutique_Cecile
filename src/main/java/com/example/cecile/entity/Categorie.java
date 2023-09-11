@@ -1,23 +1,32 @@
 package com.example.cecile.entity;
 
+
+import jakarta.persistence.*;
+
+import java.util.List;
+
+@Entity
+@Table(name = "categories")
 public class Categorie {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @Column(name = "name")
     private String name;
 
+    @OneToMany(mappedBy = "categorie")
+    private List<Produit> produit;
 
-    private Produit produit;
 
-
-    public Categorie(Long id, String name, Produit produit) {
+    public Categorie(Long id, String name, List<Produit> produit) {
         this.id = id;
         this.name = name;
         this.produit = produit;
     }
 
-    public Categorie(String name, Produit produit) {
+    public Categorie(String name, List<Produit> produit) {
         this.name = name;
         this.produit = produit;
     }
@@ -36,11 +45,11 @@ public class Categorie {
         this.name = name;
     }
 
-    public Produit getProduit() {
+    public List<Produit> getProduit() {
         return produit;
     }
 
-    public void setProduit(Produit produit) {
+    public void setProduit(List<Produit> produit) {
         this.produit = produit;
     }
 }
