@@ -23,7 +23,7 @@ public class CategorieService {
     public List<Categorie> fetchAll() {return categorieRepository.findAll();}
 
     public void save(CategorieDto categorieDto) {
-        Categorie newCategorie =new Categorie(categorieDto.getName());
+        Categorie newCategorie = new Categorie(categorieDto.getName());
         categorieRepository.save(newCategorie);
     }
 

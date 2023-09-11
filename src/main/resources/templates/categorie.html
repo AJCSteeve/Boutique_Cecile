@@ -1,39 +1,39 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Categorie</title>
-</head>
-<body>
-<div class="container">
-    <div class="card">
-        <div class="card-header">LISTE DE CATEGORIES</div>
-        <div class="card-body">
-            <form method="get" th:action="@{categorie}">
-                <label> categorie </label>
-                <input type="text" name = "keyword" th:value="${Keyword}">
-                <button type="submit" class="btn btn-primary"> Chercher   </button>
-            </form>
-            <table class="table" >
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nom</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="p:${listCategorie}">
-                    <td th:text="${c.id}"></td>
-                    <td th:text="${c.nom}"></td>
-                    <td>
-                        <a class="btn-outline-danger" th:href="@{delete(id=${c.id}, page =${currentpage})}"></a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+<!--    <title>Categorie</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <div class="card">-->
+<!--        <div class="card-header">LISTE DE CATEGORIES</div>-->
+<!--        <div class="card-body">-->
+<!--            <form method="get" th:action="@{categorie}">-->
+<!--                <label> categorie </label>-->
+<!--                <input type="text" name = "keyword" th:value="${Keyword}">-->
+<!--                <button type="submit" class="btn btn-primary"> Chercher   </button>-->
+<!--            </form>-->
+<!--            <table class="table" >-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th>ID</th>-->
+<!--                    <th>Nom</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                <tr th:each="p:${listCategorie}">-->
+<!--                    <td th:text="${c.id}"></td>-->
+<!--                    <td th:text="${c.nom}"></td>-->
+<!--                    <td>-->
+<!--                        <a class="btn-outline-danger" th:href="@{delete(id=${c.id}, page =${currentpage})}"></a>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->

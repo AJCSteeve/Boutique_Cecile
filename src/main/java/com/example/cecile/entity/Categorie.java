@@ -33,6 +33,9 @@ public class Categorie {
 
     public Categorie() {}
 
+    public Categorie(String name) {
+    }
+
     public Long getId() {
         return id;
     }
